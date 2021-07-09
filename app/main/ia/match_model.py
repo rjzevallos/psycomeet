@@ -6,7 +6,7 @@ from sklearn.preprocessing import MinMaxScaler
 import os
 
 
-def match():
+def match(user_id):
     data = pd.read_csv(os.path.join(os.getcwd(),"data.csv"))
     data = data.drop(columns='username')
     data_categorical = data.select_dtypes('object')
@@ -45,7 +45,7 @@ def match():
     final_mat.columns.name = 'user_id'
     value = []
     for index, row in final_mat.iterrows():
-        value.append((row['fffe3100'],index))
+        value.append((row[user_id],index))
     value.sort(reverse=True)
     
     return value[1:6]
