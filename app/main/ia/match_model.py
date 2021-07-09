@@ -7,11 +7,12 @@ from nltk.corpus import stopwords
 from nltk.collocations import BigramAssocMeasures, BigramCollocationFinder
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import MinMaxScaler
+import os
 
 from sklearn.decomposition import PCA
 
 def match():
-    data = pd.read_csv("data.csv")
+    data = pd.read_csv(os.path.join(os.getcwd(),"data.csv"))
     data = data.drop(columns='username')
     data_categorical = data.select_dtypes('object')
     data_categorical = data_categorical.drop(columns=['user_id', 
