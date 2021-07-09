@@ -10,12 +10,6 @@ from sklearn.preprocessing import MinMaxScaler
 
 from sklearn.decomposition import PCA
 
-def get_top_5(data):
-    value = []
-	for i in data:
-		value.append(i)
-	return value
-
 def match(user_id):
 	data = pd.read_csv("data.csv")
 	data = data.drop(columns='username')
@@ -54,7 +48,11 @@ def match(user_id):
 	final_mat.index.name = 'user_id'
 	final_mat.columns.name = 'user_id'
 	
-	return got_top_5(final_mat[user_id])
+	value = []
+	for i in data[user_id]:
+		value.append(i)
+	
+	return value
 	
 	
 match("fffe3100")
