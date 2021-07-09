@@ -12,8 +12,8 @@ from sklearn.decomposition import PCA
 
 def get_top_5(data):
     value = []
-    for i in data:
-        value.append(i)
+	for i in data:
+		value.append(i)
 	return value
 
 def match(user_id):
