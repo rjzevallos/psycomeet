@@ -10,7 +10,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 from sklearn.decomposition import PCA
 
-def match(user_id):
+def match():
 	data = pd.read_csv("data.csv")
 	data = data.drop(columns='username')
 	data_categorical = data.select_dtypes('object')
@@ -49,10 +49,10 @@ def match(user_id):
 	final_mat.columns.name = 'user_id'
 	
 	value = []
-	for i in data[user_id]:
+	for i in data['fffe3100']:
 		value.append(i)
 	
 	return value
 	
 	
-match("fffe3100")
+match()
