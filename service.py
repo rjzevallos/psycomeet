@@ -14,7 +14,12 @@ CORS(app)
 def get_match():
     content = request.get_json()
     user_id = content['user_id']
-    data = gservice.get_match(user_id)
+	sex = content['sex']
+	job = contente['job']
+	pets = content['pets']
+	interests = content['interests']
+	other_interests = content['other_interests']
+    data = gservice.get_match(user_id,sex,job,pets,interests,other_interests)
     return data
 
 
